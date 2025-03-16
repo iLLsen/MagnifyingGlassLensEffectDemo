@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b2ur23p0mpw0v"]
+
+[ext_resource type="Shader" uid="uid://byu54smmt4gwy" path="res://magnify.gdshader" id="1_sofe4"]
+
+[resource]
+shader = ExtResource("1_sofe4")
+shader_parameter/radius = 5.0
+shader_parameter/power = 0.2
+shader_parameter/transparent_texture = false
