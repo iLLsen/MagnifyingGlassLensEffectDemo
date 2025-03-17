@@ -2,7 +2,7 @@ If you like this demo, check out my other work at [https://illsen.com/links/](ht
 
 ## Demo Project for Magnifying Glass Shader
 
-This demo showcases a **Magnifying Glass Shader** applied to a **MeshInstance2D** in trhe scene, which uses a **SphereMesh** and a texture. It demonstrates the lens distortion effect and how the shader works in real-time.
+This demo showcases a **Magnifying Glass Shader** applied to a **MeshInstance2D** in the scene, which uses a **SphereMesh** and a texture. It demonstrates the lens distortion effect and how the shader works in real-time.
 
 ### How the Shader is Applied:
 
