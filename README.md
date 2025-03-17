@@ -1,6 +1,6 @@
 If you like this demo, check out my other work at [https://illsen.com/links/](https://illsen.com/links/).
 
-## Demo Project for Magnifying Glass Shader
+## Godot 4 Demo Project for Magnifying Glass Shader
 
 This demo showcases a **Magnifying Glass Shader** applied to a **MeshInstance2D** in the scene, which uses a **SphereMesh** and a texture. It demonstrates the lens distortion effect and how the shader works in real-time.
 
