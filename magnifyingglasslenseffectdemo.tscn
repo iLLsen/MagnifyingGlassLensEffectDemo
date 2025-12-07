@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ctmytx1og1638"]
 
-[ext_resource type="Texture2D" uid="uid://b1ne2hxvd0t7r" path="res://room2.png" id="1_atvum"]
+[ext_resource type="Texture2D" uid="uid://c3i01imicddbj" path="res://newspaper.png" id="1_sijfy"]
 [ext_resource type="Texture2D" uid="uid://baufvspq42g24" path="res://mglassgrip.png" id="3_xub2u"]
 [ext_resource type="Script" uid="uid://cb883gnuyrvv5" path="res://magnifier.gd" id="4_sijfy"]
 [ext_resource type="Material" uid="uid://b2ur23p0mpw0v" path="res://magnify_shader_material.tres" id="4_xub2u"]
@@ -15,8 +15,8 @@ radial_segments = 4
 [node name="magnifyingglasslenseffectdemo" type="Node2D"]
 
 [node name="Room" type="Sprite2D" parent="."]
-scale = Vector2(0.714286, 0.703125)
-texture = ExtResource("1_atvum")
+position = Vector2(-33, 0)
+texture = ExtResource("1_sijfy")
 centered = false
 
 [node name="Control" type="Control" parent="."]
