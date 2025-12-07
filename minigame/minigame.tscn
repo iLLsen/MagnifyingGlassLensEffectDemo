@@ -1,0 +1,109 @@
+[gd_scene load_steps=10 format=3 uid="uid://c3dcdc2j5x0y2"]
+
+[ext_resource type="Script" uid="uid://dlrooo2fllwqb" path="res://minigame/gamemanager.gd" id="1_manager"]
+[ext_resource type="Texture2D" uid="uid://c3i01imicddbj" path="res://newspaper.png" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://baufvspq42g24" path="res://mglassgrip.png" id="3_grip"]
+[ext_resource type="Script" uid="uid://cb883gnuyrvv5" path="res://magnifier.gd" id="4_mag_script"]
+[ext_resource type="Material" uid="uid://b2ur23p0mpw0v" path="res://magnify_shader_material.tres" id="5_shader"]
+[ext_resource type="Texture2D" uid="uid://com6qy4v3k4aa" path="res://mglass.png" id="6_glass"]
+[ext_resource type="Script" uid="uid://2royb10y8tip" path="res://button.gd" id="7_btn"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_lens"]
+radius = 198.0
+height = 394.0
+radial_segments = 4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_focus"]
+radius = 48.218273
+
+[node name="SecretMessageGame" type="Node2D"]
+script = ExtResource("1_manager")
+
+[node name="Room" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_bg")
+
+[node name="Letters" type="Node2D" parent="."]
+
+[node name="allowedspawnarea" type="Polygon2D" parent="Letters"]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(208, 372, 1707, 270, 1782, 929, 251, 1056)
+
+[node name="magnifier" type="Sprite2D" parent="."]
+position = Vector2(1394, 403)
+texture = ExtResource("3_grip")
+offset = Vector2(-138.18188, 181.81818)
+script = ExtResource("4_mag_script")
+
+[node name="Glass" type="MeshInstance2D" parent="magnifier"]
+material = ExtResource("5_shader")
+mesh = SubResource("SphereMesh_lens")
+texture = ExtResource("6_glass")
+
+[node name="FocusPoint" type="Area2D" parent="magnifier"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="magnifier/FocusPoint"]
+shape = SubResource("CircleShape2D_focus")
+
+[node name="UI" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 148.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+
+[node name="TargetLabel" type="Label" parent="UI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 48
+text = "TARGET: _ _ _ _"
+
+[node name="StatusLabel" type="Label" parent="UI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 32
+text = "SEARCH THE NEWSPAPER..."
+
+[node name="ButtonContainer" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+
+[node name="QuitButton" type="Button" parent="UI/ButtonContainer"]
+self_modulate = Color(0.0745098, 0.556863, 1, 1)
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Quit"
+script = ExtResource("7_btn")
+
+[connection signal="pressed" from="UI/ButtonContainer/QuitButton" to="UI/ButtonContainer/QuitButton" method="_on_pressed"]

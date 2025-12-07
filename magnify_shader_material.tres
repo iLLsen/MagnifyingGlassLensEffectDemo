@@ -6,4 +6,4 @@
 shader = ExtResource("1_sofe4")
 shader_parameter/radius = 5.0
 shader_parameter/power = 0.2
-shader_parameter/transparent_texture = false
+shader_parameter/transparent_texture = true
