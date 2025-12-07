@@ -15,3 +15,14 @@ This demo showcases a **Magnifying Glass Shader** applied to a **MeshInstance2D*
 - **Power**: Adjusts the strength of the distortion effect.
 - **Transparent Texture**: Set this to **false** to blend the node's texture with the shader’s color.
 
+
+## Minigame Example
+
+Scene: minigame.tscn
+A small hidden object game included to demo the shader in a gameplay context.
+Objective: Find missprinted letters in the newspaper.
+Use the magnifying glass to reveal tiny hidden letters.
+Find all letters to reveal the secret "Godot Engine" headline.
+Optional: Find the hidden bugs scurrying around the page.
+
+Controls: Mouse to move, click Hint for help.
